@@ -34,4 +34,17 @@ dependencies {
 
     implementation 'com.bluelinelabs:conductor:2.1.4'
     implementation 'com.bluelinelabs:conductor-support:2.1.4'
+    implementation 'net.soulwolf.widget:ratiolayout:2.1.0'
+    implementation 'com.github.vivchar:RendererRecyclerViewAdapter:2.5.1'
+
+    //Anko
+    implementation "org.jetbrains.anko:anko-commons:0.10.5"
+    implementation "org.jetbrains.anko:anko-appcompat-v7:0.10.5"
+    implementation "org.jetbrains.anko:anko-design:0.10.5"
+    implementation "org.jetbrains.anko:anko-percent:0.10.5"
+
+    //RxKotlin
+    implementation 'io.reactivex.rxjava2:rxkotlin:2.1.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.6'
 }

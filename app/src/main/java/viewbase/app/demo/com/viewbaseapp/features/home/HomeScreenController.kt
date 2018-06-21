@@ -17,6 +17,7 @@ class HomeScreenController : Controller() {
     enum class MenuAction {
         PAGER, DETAIL
     }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup): View {
         val view = inflater.inflate(R.layout.screen_feature_home, container, false)
         initView(view)
