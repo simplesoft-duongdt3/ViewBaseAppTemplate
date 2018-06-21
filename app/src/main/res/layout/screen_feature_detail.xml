@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/controllerContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="200dp"
+    android:paddingRight="200dp">
+
+    <FrameLayout
+        android:id="@+id/vgHeader"
+        android:layout_width="match_parent"
+        android:background="#d9d9d9"
+        android:layout_height="100dp" />
+
+    <FrameLayout
+        android:id="@+id/vgListItem"
+        android:layout_width="match_parent"
+        android:background="#b4b4b4"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

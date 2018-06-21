@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/controllerContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/vgMenu"
+        android:layout_width="150dp"
+        android:background="#d9d9d9"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+        <TextView
+            android:id="@+id/tvDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Detail feature"
+            style="@style/Base.TextAppearance.AppCompat.Caption"
+            android:padding="16dp"/>
+
+        <TextView
+            android:id="@+id/tvPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pager feature"
+            android:padding="16dp"
+            style="@style/Base.TextAppearance.AppCompat.Caption"/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/vgContent"
+        android:layout_width="match_parent"
+        android:background="#b4b4b4"
+        android:layout_height="match_parent" />
+
+</LinearLayout>
