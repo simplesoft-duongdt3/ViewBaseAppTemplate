@@ -5,7 +5,6 @@ import android.arch.lifecycle.LifecycleRegistryOwner
 import android.os.Bundle
 import com.bluelinelabs.conductor.Controller
 import com.bluelinelabs.conductor.archlifecycle.ControllerLifecycleRegistryOwner
-import com.bluelinelabs.conductor.archlifecycle.LifecycleController
 
 abstract class ViewController(bundle: Bundle?) : Controller(bundle), LifecycleRegistryOwner {
 

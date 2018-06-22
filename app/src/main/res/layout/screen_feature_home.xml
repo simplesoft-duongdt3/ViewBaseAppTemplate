@@ -13,6 +13,15 @@
         android:background="#d9d9d9"
         android:layout_height="match_parent"
         android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tvTittle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            style="@style/Base.TextAppearance.AppCompat.Caption"
+            android:padding="16dp"/>
+
         <TextView
             android:id="@+id/tvDetail"
             android:layout_width="match_parent"

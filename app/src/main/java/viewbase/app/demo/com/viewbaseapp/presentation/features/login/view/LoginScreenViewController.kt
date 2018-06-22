@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import com.bluelinelabs.conductor.RouterTransaction
 import kotlinx.android.synthetic.main.screen_login.view.*
 import viewbase.app.demo.com.viewbaseapp.R
+import viewbase.app.demo.com.viewbaseapp.base.extra.BundleOptionsCompanion
 import viewbase.app.demo.com.viewbaseapp.base.kotlinex.view.gone
 import viewbase.app.demo.com.viewbaseapp.base.kotlinex.view.visible
 import viewbase.app.demo.com.viewbaseapp.base.viewbase.ViewController
@@ -19,7 +20,7 @@ import viewbase.app.demo.com.viewbaseapp.presentation.features.login.presenter.L
 class LoginScreenViewController(bundle: Bundle?) : ViewController(bundle), LoginContract.View {
     constructor() : this(null)
 
-    private val presenter : LoginContract.Presenter = LoginPresenter()
+    private val presenter: LoginContract.Presenter = LoginPresenter()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup): View {
         val view = inflater.inflate(R.layout.screen_login, container, false)
@@ -57,7 +58,8 @@ class LoginScreenViewController(bundle: Bundle?) : ViewController(bundle), Login
     }
 
     override fun goToHomeScreen(loginResultViewModel: LoginResultViewModel) {
-        router.pushController(RouterTransaction.with(HomeScreenViewController(loginResultViewModel)))
+        val bundle = HomeScreenViewController.BundleOptions.create(loginResultViewModel)
+        router.pushController(RouterTransaction.with(HomeScreenViewController(bundle)))
         router.popController(this)
 
         /*router.pushController(RouterTransaction.with(DetailScreenController())

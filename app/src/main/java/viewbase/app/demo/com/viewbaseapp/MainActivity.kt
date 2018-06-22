@@ -1,7 +1,7 @@
 package viewbase.app.demo.com.viewbaseapp
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import com.bluelinelabs.conductor.Conductor
 import com.bluelinelabs.conductor.Router
 import com.bluelinelabs.conductor.RouterTransaction
@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         if (!router.hasRootController()) {
             router.setRoot(RouterTransaction.with(LoginScreenViewController()))
         }
+
     }
 
     override fun onBackPressed() {
