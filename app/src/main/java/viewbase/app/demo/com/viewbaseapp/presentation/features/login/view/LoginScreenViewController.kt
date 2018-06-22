@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.bluelinelabs.conductor.RouterTransaction
 import kotlinx.android.synthetic.main.screen_login.view.*
+import org.koin.standalone.inject
 import viewbase.app.demo.com.viewbaseapp.R
-import viewbase.app.demo.com.viewbaseapp.base.extra.BundleOptionsCompanion
 import viewbase.app.demo.com.viewbaseapp.base.kotlinex.view.gone
 import viewbase.app.demo.com.viewbaseapp.base.kotlinex.view.visible
 import viewbase.app.demo.com.viewbaseapp.base.viewbase.ViewController
@@ -15,12 +15,11 @@ import viewbase.app.demo.com.viewbaseapp.presentation.features.home.view.HomeScr
 import viewbase.app.demo.com.viewbaseapp.presentation.features.login.LoginContract
 import viewbase.app.demo.com.viewbaseapp.presentation.features.login.model.LoginResultViewModel
 import viewbase.app.demo.com.viewbaseapp.presentation.features.login.model.LoginViewModel
-import viewbase.app.demo.com.viewbaseapp.presentation.features.login.presenter.LoginPresenter
 
 class LoginScreenViewController(bundle: Bundle?) : ViewController(bundle), LoginContract.View {
     constructor() : this(null)
 
-    private val presenter: LoginContract.Presenter = LoginPresenter()
+    private val presenter: LoginContract.Presenter by inject()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup): View {
         val view = inflater.inflate(R.layout.screen_login, container, false)

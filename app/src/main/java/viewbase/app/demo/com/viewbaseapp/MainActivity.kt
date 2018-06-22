@@ -9,8 +9,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import viewbase.app.demo.com.viewbaseapp.presentation.features.login.view.LoginScreenViewController
 
 class MainActivity : AppCompatActivity() {
-
-    private lateinit var router : Router
+    private lateinit var router: Router
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,7 +19,6 @@ class MainActivity : AppCompatActivity() {
         if (!router.hasRootController()) {
             router.setRoot(RouterTransaction.with(LoginScreenViewController()))
         }
-
     }
 
     override fun onBackPressed() {

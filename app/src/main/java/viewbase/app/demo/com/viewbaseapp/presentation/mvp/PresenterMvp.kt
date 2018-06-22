@@ -1,8 +1,9 @@
 package viewbase.app.demo.com.viewbaseapp.presentation.mvp
 
+import org.koin.standalone.KoinComponent
 import java.lang.ref.WeakReference
 
-abstract class PresenterMvp<V : ViewMvp> {
+abstract class PresenterMvp<V : ViewMvp> : KoinComponent {
     private var weakReference: WeakReference<V>? = null
     fun attachView(view: V) {
         if (!isViewAttached) {

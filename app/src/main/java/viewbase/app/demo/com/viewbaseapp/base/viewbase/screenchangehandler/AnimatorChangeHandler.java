@@ -18,12 +18,10 @@ import com.bluelinelabs.conductor.ControllerChangeHandler;
  */
 public abstract class AnimatorChangeHandler extends ControllerChangeHandler {
 
-    private static final String KEY_DURATION = "AnimatorChangeHandler.duration";
-    private static final String KEY_REMOVES_FROM_ON_PUSH = "AnimatorChangeHandler.removesFromViewOnPush";
-
     @SuppressWarnings("WeakerAccess")
     public static final long DEFAULT_ANIMATION_DURATION = -1;
-
+    private static final String KEY_DURATION = "AnimatorChangeHandler.duration";
+    private static final String KEY_REMOVES_FROM_ON_PUSH = "AnimatorChangeHandler.removesFromViewOnPush";
     private long animationDuration;
     private boolean removesFromViewOnPush;
     private boolean canceled;
@@ -102,10 +100,10 @@ public abstract class AnimatorChangeHandler extends ControllerChangeHandler {
     /**
      * Should be overridden to return the Animator to use while replacing Views.
      *
-     * @param container The container these Views are hosted in.
-     * @param from The previous View in the container or {@code null} if there was no Controller before this transition
-     * @param to The next View that should be put in the container or {@code null} if no Controller is being transitioned to
-     * @param isPush True if this is a push transaction, false if it's a pop.
+     * @param container          The container these Views are hosted in.
+     * @param from               The previous View in the container or {@code null} if there was no Controller before this transition
+     * @param to                 The next View that should be put in the container or {@code null} if no Controller is being transitioned to
+     * @param isPush             True if this is a push transaction, false if it's a pop.
      * @param toAddedToContainer True if the "to" view was added to the container as a part of this ChangeHandler. False if it was already in the hierarchy.
      */
     @NonNull

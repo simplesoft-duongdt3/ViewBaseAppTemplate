@@ -16,14 +16,14 @@ class PagerScreenViewController(bundle: Bundle?) : ViewController(bundle) {
 
     constructor() : this(null)
 
-    private lateinit var routerPagerAdapter : RouterPagerAdapter
+    private lateinit var routerPagerAdapter: RouterPagerAdapter
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup): View {
         val view = inflater.inflate(R.layout.screen_feature_pager, container, false)
         initView(view)
         return view
     }
 
-    private fun initView(view : View) {
+    private fun initView(view: View) {
         routerPagerAdapter = object : RouterPagerAdapter(this) {
             override fun configureRouter(router: Router, position: Int) {
                 if (!router.hasRootController()) {

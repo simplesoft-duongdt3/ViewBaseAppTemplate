@@ -5,11 +5,13 @@ import android.support.annotation.LayoutRes
 import com.github.vivchar.rendererrecyclerviewadapter.ViewModel
 import com.github.vivchar.rendererrecyclerviewadapter.binder.ViewBinder
 import com.github.vivchar.rendererrecyclerviewadapter.binder.ViewFinder
+import org.koin.standalone.KoinComponent
+import org.koin.standalone.inject
 import viewbase.app.demo.com.viewbaseapp.base.util.DoubleTouchPrevent
-import viewbase.app.demo.com.viewbaseapp.base.util.DoubleTouchPreventProvider
 
-abstract class ViewHolderRenderer<M : ViewModel> : ViewBinder.Binder<M> {
-    private val doubleTouchPrevent: DoubleTouchPrevent = DoubleTouchPreventProvider.createDoubleTouchPrevent()
+abstract class ViewHolderRenderer<M : ViewModel> : ViewBinder.Binder<M>, KoinComponent {
+    private val doubleTouchPrevent: DoubleTouchPrevent by inject()
+
     @LayoutRes
     abstract fun getLayoutId(): Int
 

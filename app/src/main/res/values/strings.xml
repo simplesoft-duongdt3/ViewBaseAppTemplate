@@ -3,4 +3,6 @@
     <string name="ACTION_RETRY">Retry</string>
     <string name="ACTION_CANCEL">Cancel</string>
     <string name="ACTION_OK">OK</string>
+    <string name="login_feature_error_msg_missing_login_info">Missing login info.</string>
+    <string name="login_feature_error_msg_wrong_login_info">"Email or password is not exists."</string>
 </resources>

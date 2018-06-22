@@ -4,8 +4,8 @@ import android.os.SystemClock;
 import android.support.v4.util.ArrayMap;
 
 public class DoubleTouchPrevent {
-    private ArrayMap<String, Long> touchActionMap = new ArrayMap<>();
     public static final int TIME_PREVENT_DOUBLE_TOUCH = 300;
+    private ArrayMap<String, Long> touchActionMap = new ArrayMap<>();
     private long minTime;
 
     public DoubleTouchPrevent() {

@@ -12,7 +12,7 @@ class TaskExecutor internal constructor(val type: Type) : ThreadExecutor {
     init {
         val queueLifo = LinkedBlockingDeque<Runnable>()
         val linkedBlockingQueue = LinkedBlockingQueue<Runnable>()
-        val workQueue : BlockingQueue<Runnable> = if(type == Type.FIFO) linkedBlockingQueue else queueLifo
+        val workQueue: BlockingQueue<Runnable> = if (type == Type.FIFO) linkedBlockingQueue else queueLifo
         val jobThreadFactory = JobThreadFactory()
         this.threadPoolExecutor = ThreadPoolExecutor(10, 100, 20L, TimeUnit.SECONDS, workQueue, jobThreadFactory)
     }
@@ -37,7 +37,7 @@ class TaskExecutor internal constructor(val type: Type) : ThreadExecutor {
         }
 
         @JvmStatic
-        fun get() : TaskExecutor = TASK_EXECUTOR
+        fun get(): TaskExecutor = TASK_EXECUTOR
 
         @JvmStatic
         private val TASK_EXECUTOR_LIFO: TaskExecutor by lazy {
@@ -45,8 +45,9 @@ class TaskExecutor internal constructor(val type: Type) : ThreadExecutor {
         }
 
         @JvmStatic
-        fun getLifo() : TaskExecutor = TASK_EXECUTOR_LIFO
+        fun getLifo(): TaskExecutor = TASK_EXECUTOR_LIFO
+
         @JvmStatic
-        fun new(type: Type) : TaskExecutor = TaskExecutor(type)
+        fun new(type: Type): TaskExecutor = TaskExecutor(type)
     }
 }

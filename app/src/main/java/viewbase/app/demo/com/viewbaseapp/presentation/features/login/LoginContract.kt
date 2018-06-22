@@ -17,5 +17,4 @@ class LoginContract {
     abstract class Presenter : PresenterMvp<View>() {
         abstract fun requestLogin(loginViewModel: LoginViewModel)
     }
-
 }

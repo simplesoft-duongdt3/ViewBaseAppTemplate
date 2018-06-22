@@ -126,7 +126,7 @@ class RecyclerViewController(private val recyclerView: RecyclerView, private val
         }
     }
 
-    class LoadMoreConfig(val loadMoreEvent: () -> Unit, val viewRenderer: LoadMoreViewBinder){
+    class LoadMoreConfig(val loadMoreEvent: () -> Unit, val viewRenderer: LoadMoreViewBinder) {
 
-}
+    }
 }

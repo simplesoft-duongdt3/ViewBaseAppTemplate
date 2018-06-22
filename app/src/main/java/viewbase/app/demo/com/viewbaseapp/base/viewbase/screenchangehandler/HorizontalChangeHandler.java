@@ -16,7 +16,8 @@ import com.bluelinelabs.conductor.changehandler.AnimatorChangeHandler;
  */
 public class HorizontalChangeHandler extends AnimatorChangeHandler {
 
-    public HorizontalChangeHandler() { }
+    public HorizontalChangeHandler() {
+    }
 
     public HorizontalChangeHandler(boolean removesFromViewOnPush) {
         super(removesFromViewOnPush);

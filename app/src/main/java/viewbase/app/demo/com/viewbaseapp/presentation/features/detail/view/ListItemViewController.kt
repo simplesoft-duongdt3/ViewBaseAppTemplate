@@ -17,7 +17,7 @@ import viewbase.app.demo.com.viewbaseapp.base.viewbase.ViewController
 class ListItemViewController(bundle: Bundle?) : ViewController(bundle) {
     constructor() : this(null)
 
-    private lateinit var recyclerViewController : RecyclerViewController
+    private lateinit var recyclerViewController: RecyclerViewController
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup): View {
         val view = inflater.inflate(R.layout.list_item_home, container, false)
         initView(view)

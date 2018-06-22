@@ -1,14 +1,13 @@
 package viewbase.app.demo.com.viewbaseapp.presentation.features.login.presenter
 
-import viewbase.app.demo.com.viewbaseapp.base.executor.AndroidUseCaseExecution
 import viewbase.app.demo.com.viewbaseapp.domain.usecase.LoginUseCase
 import viewbase.app.demo.com.viewbaseapp.domain.usecase.base.ResultListener
 import viewbase.app.demo.com.viewbaseapp.presentation.features.login.LoginContract
+import viewbase.app.demo.com.viewbaseapp.presentation.features.login.LoginResourceProvider
 import viewbase.app.demo.com.viewbaseapp.presentation.features.login.model.LoginResultViewModel
 import viewbase.app.demo.com.viewbaseapp.presentation.features.login.model.LoginViewModel
 
-class LoginPresenter : LoginContract.Presenter() {
-    private val loginUseCase = LoginUseCase(AndroidUseCaseExecution())
+class LoginPresenter(private val loginUseCase: LoginUseCase, private val loginResourceProvider: LoginResourceProvider) : LoginContract.Presenter() {
     override fun requestLogin(loginViewModel: LoginViewModel) {
         view?.let { view ->
             processLogin(view, loginViewModel)
@@ -46,7 +45,7 @@ class LoginPresenter : LoginContract.Presenter() {
 
     private fun validateLogin(loginViewModel: LoginViewModel): String {
         if (!loginViewModel.isEnoughInfo()) {
-            return "Missing login info."
+            return loginResourceProvider.getLoginFailErrorMsg()
         }
         return ""
     }

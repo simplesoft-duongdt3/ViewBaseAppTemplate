@@ -25,7 +25,7 @@ class HomeScreenViewController(bundle: Bundle?) : ViewController(bundle) {
 
     companion object : BundleOptionsCompanion<BundleOptions>(BundleOptions)
 
-    private var loginResultExtra : LoginResultViewModel? = null
+    private var loginResultExtra: LoginResultViewModel? = null
 
     init {
         bundle?.options { options ->
@@ -33,7 +33,8 @@ class HomeScreenViewController(bundle: Bundle?) : ViewController(bundle) {
         }
     }
 
-    private lateinit var vgContent : ViewGroup
+    private lateinit var vgContent: ViewGroup
+
     enum class MenuAction {
         PAGER, DETAIL
     }
@@ -59,7 +60,7 @@ class HomeScreenViewController(bundle: Bundle?) : ViewController(bundle) {
         view.tvTittle.text = loginResultExtra?.userName
     }
 
-    private fun onMenuSelected(menuAction : MenuAction) {
+    private fun onMenuSelected(menuAction: MenuAction) {
         if (menuAction == MenuAction.DETAIL) {
             getChildRouter(vgContent).pushController(RouterTransaction.with(DetailScreenViewController()))
         } else if (menuAction == MenuAction.PAGER) {

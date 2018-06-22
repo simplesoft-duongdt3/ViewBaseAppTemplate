@@ -16,7 +16,8 @@ import com.bluelinelabs.conductor.changehandler.AnimatorChangeHandler;
  */
 public class FadeChangeHandler extends AnimatorChangeHandler {
 
-    public FadeChangeHandler() { }
+    public FadeChangeHandler() {
+    }
 
     public FadeChangeHandler(boolean removesFromViewOnPush) {
         super(removesFromViewOnPush);

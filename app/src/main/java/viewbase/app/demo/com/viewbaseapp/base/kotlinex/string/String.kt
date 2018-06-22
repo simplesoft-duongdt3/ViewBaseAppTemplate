@@ -29,7 +29,7 @@ fun String.toTimeMilliSecond(format: String): Long = this.toDate(format).time
 
 fun String.removeAccentAndSpace(): String = AccentRemover.removeAccentAndSpace(this)
 
-fun String?.valueOrDefault(default : String): String {
+fun String?.valueOrDefault(default: String): String {
     return this ?: default
 }
 

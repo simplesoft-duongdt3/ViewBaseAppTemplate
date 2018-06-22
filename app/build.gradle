@@ -9,7 +9,7 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "viewbase.app.demo.com.viewbaseapp"
+        applicationId "viewbase.appContext.demo.com.viewbaseapp"
         minSdkVersion 19
         targetSdkVersion 27
         versionCode 1
@@ -30,6 +30,8 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support:design:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    implementation 'com.android.support:multidex:1.0.3'
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
@@ -63,4 +65,7 @@ dependencies {
 
     //Bundle binding
     //implementation 'me.eugeniomarletti:android-extras-delegates:1.0.5'
+
+    // Koin DI for Kotlin
+    implementation 'org.koin:koin-android:0.9.3'
 }

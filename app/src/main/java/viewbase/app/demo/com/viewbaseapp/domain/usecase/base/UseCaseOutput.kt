@@ -29,7 +29,7 @@ abstract class UseCaseOutput<Output> internal constructor(private val useCaseExe
      * by [.buildUseCaseObservable] ()} method.
      * @param input Parameters (Optional) used to build/executeAsync this use case.
      */
-    fun executeAsync(resultListener: ResultListener<Output>) : UseCaseTask {
+    fun executeAsync(resultListener: ResultListener<Output>): UseCaseTask {
         val observer: DefaultObserver<Output> = DefaultObserver()
         observer.addResultListener(ViewResponseResultListener(resultListener))
         val observable = this.buildUseCaseObservable()
@@ -41,13 +41,15 @@ abstract class UseCaseOutput<Output> internal constructor(private val useCaseExe
     }
 
     @Throws(Throwable::class)
-    fun execute() : Output {
+    fun execute(): Output {
         val outputObservable = OutputObservable<Output>()
         this.buildUseCaseObservable().subscribeWith(outputObservable)
         if (outputObservable.output != null) {
             return outputObservable.output!!
         }
-        throw if (outputObservable.exception != null) { outputObservable.exception!! } else EmptyOutputException()
+        throw if (outputObservable.exception != null) {
+            outputObservable.exception!!
+        } else EmptyOutputException()
     }
 
     /**
