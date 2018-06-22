@@ -6,7 +6,7 @@ import com.bluelinelabs.conductor.Conductor
 import com.bluelinelabs.conductor.Router
 import com.bluelinelabs.conductor.RouterTransaction
 import kotlinx.android.synthetic.main.activity_main.*
-import viewbase.app.demo.com.viewbaseapp.presentation.features.login.view.LoginScreenViewController
+import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.login.view.LoginScreenViewController
 
 class MainActivity : AppCompatActivity() {
     private lateinit var router: Router

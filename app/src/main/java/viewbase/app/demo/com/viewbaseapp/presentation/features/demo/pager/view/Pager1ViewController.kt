@@ -1,4 +1,4 @@
-package viewbase.app.demo.com.viewbaseapp.presentation.features.pager.view
+package viewbase.app.demo.com.viewbaseapp.presentation.features.demo.pager.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,8 @@ import android.view.ViewGroup
 import viewbase.app.demo.com.viewbaseapp.R
 import viewbase.app.demo.com.viewbaseapp.base.viewbase.ViewController
 
-class Pager2ViewController(bundle: Bundle?) : ViewController(bundle) {
+
+class Pager1ViewController(bundle: Bundle?) : ViewController(bundle) {
     constructor() : this(null)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup): View {

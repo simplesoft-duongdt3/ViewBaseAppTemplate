@@ -1,4 +1,4 @@
-package viewbase.app.demo.com.viewbaseapp.presentation.features.login.model
+package viewbase.app.demo.com.viewbaseapp.presentation.features.demo.login.model
 
 import java.io.Serializable
 

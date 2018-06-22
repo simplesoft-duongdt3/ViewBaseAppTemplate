@@ -1,4 +1,4 @@
-package viewbase.app.demo.com.viewbaseapp.presentation.features.login.view
+package viewbase.app.demo.com.viewbaseapp.presentation.features.demo.login.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,10 +11,10 @@ import viewbase.app.demo.com.viewbaseapp.R
 import viewbase.app.demo.com.viewbaseapp.base.kotlinex.view.gone
 import viewbase.app.demo.com.viewbaseapp.base.kotlinex.view.visible
 import viewbase.app.demo.com.viewbaseapp.base.viewbase.ViewController
-import viewbase.app.demo.com.viewbaseapp.presentation.features.home.view.HomeScreenViewController
-import viewbase.app.demo.com.viewbaseapp.presentation.features.login.LoginContract
-import viewbase.app.demo.com.viewbaseapp.presentation.features.login.model.LoginResultViewModel
-import viewbase.app.demo.com.viewbaseapp.presentation.features.login.model.LoginViewModel
+import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.home.view.HomeScreenViewController
+import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.login.LoginContract
+import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.login.model.LoginResultViewModel
+import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.login.model.LoginViewModel
 
 class LoginScreenViewController(bundle: Bundle?) : ViewController(bundle), LoginContract.View {
     constructor() : this(null)

@@ -1,4 +1,4 @@
-package viewbase.app.demo.com.viewbaseapp.presentation.features.pager.view
+package viewbase.app.demo.com.viewbaseapp.presentation.features.demo.pager.view
 
 import android.os.Bundle
 import android.view.LayoutInflater

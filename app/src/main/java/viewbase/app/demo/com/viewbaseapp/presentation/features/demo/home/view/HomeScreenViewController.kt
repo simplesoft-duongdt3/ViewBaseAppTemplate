@@ -1,4 +1,4 @@
-package viewbase.app.demo.com.viewbaseapp.presentation.features.home.view
+package viewbase.app.demo.com.viewbaseapp.presentation.features.demo.home.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,9 +10,9 @@ import viewbase.app.demo.com.viewbaseapp.R
 import viewbase.app.demo.com.viewbaseapp.base.extra.BundleExtraObject
 import viewbase.app.demo.com.viewbaseapp.base.extra.BundleOptionsCompanion
 import viewbase.app.demo.com.viewbaseapp.base.viewbase.ViewController
-import viewbase.app.demo.com.viewbaseapp.presentation.features.detail.view.DetailScreenViewController
-import viewbase.app.demo.com.viewbaseapp.presentation.features.login.model.LoginResultViewModel
-import viewbase.app.demo.com.viewbaseapp.presentation.features.pager.view.PagerScreenViewController
+import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.detail.view.DetailScreenViewController
+import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.login.model.LoginResultViewModel
+import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.pager.view.PagerScreenViewController
 
 class HomeScreenViewController(bundle: Bundle?) : ViewController(bundle) {
     object BundleOptions {

@@ -1,4 +1,4 @@
-package viewbase.app.demo.com.viewbaseapp.presentation.features.login
+package viewbase.app.demo.com.viewbaseapp.presentation.features.demo.login
 
 import viewbase.app.demo.com.viewbaseapp.R
 import viewbase.app.demo.com.viewbaseapp.base.resource.ResourceManager

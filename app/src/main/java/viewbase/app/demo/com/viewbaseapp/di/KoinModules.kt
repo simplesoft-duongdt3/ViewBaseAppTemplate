@@ -8,9 +8,9 @@ import viewbase.app.demo.com.viewbaseapp.base.resource.AndroidResourceManager
 import viewbase.app.demo.com.viewbaseapp.base.util.DoubleTouchPrevent
 import viewbase.app.demo.com.viewbaseapp.domain.usecase.LoginUseCase
 import viewbase.app.demo.com.viewbaseapp.domain.usecase.base.UseCaseExecution
-import viewbase.app.demo.com.viewbaseapp.presentation.features.login.LoginContract
-import viewbase.app.demo.com.viewbaseapp.presentation.features.login.LoginResourceProvider
-import viewbase.app.demo.com.viewbaseapp.presentation.features.login.presenter.LoginPresenter
+import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.login.LoginContract
+import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.login.LoginResourceProvider
+import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.login.presenter.LoginPresenter
 
 val appModule: Module = applicationContext {
     bean {

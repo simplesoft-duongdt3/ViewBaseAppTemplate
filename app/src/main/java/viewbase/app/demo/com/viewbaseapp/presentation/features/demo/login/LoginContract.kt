@@ -1,7 +1,7 @@
-package viewbase.app.demo.com.viewbaseapp.presentation.features.login
+package viewbase.app.demo.com.viewbaseapp.presentation.features.demo.login
 
-import viewbase.app.demo.com.viewbaseapp.presentation.features.login.model.LoginResultViewModel
-import viewbase.app.demo.com.viewbaseapp.presentation.features.login.model.LoginViewModel
+import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.login.model.LoginResultViewModel
+import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.login.model.LoginViewModel
 import viewbase.app.demo.com.viewbaseapp.presentation.mvp.PresenterMvp
 import viewbase.app.demo.com.viewbaseapp.presentation.mvp.ViewMvp
 
