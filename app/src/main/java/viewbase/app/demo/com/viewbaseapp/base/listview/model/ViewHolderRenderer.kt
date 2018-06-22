@@ -15,10 +15,10 @@ abstract class ViewHolderRenderer<M : ViewModel> : ViewBinder.Binder<M> {
 
     abstract fun getModelClass(): Class<M>
 
-    abstract fun bindView(model: M, viewRoot: ViewFinder)
+    abstract fun bindView(model: M, viewFinder: ViewFinder)
     @CallSuper
-    override fun bindView(model: M, finder: ViewFinder, payloads: MutableList<Any>) {
-        bindView(model, finder)
+    override fun bindView(model: M, viewFinder: ViewFinder, payloads: MutableList<Any>) {
+        bindView(model, viewFinder)
     }
 
     fun createViewBinder(): ViewBinder<M> = ViewBinder<M>(getLayoutId(), getModelClass(), this)

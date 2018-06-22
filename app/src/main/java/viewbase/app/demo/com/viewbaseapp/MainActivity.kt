@@ -6,7 +6,7 @@ import com.bluelinelabs.conductor.Conductor
 import com.bluelinelabs.conductor.Router
 import com.bluelinelabs.conductor.RouterTransaction
 import kotlinx.android.synthetic.main.activity_main.*
-import viewbase.app.demo.com.viewbaseapp.features.login.LoginScreenController
+import viewbase.app.demo.com.viewbaseapp.presentation.features.login.view.LoginScreenViewController
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
         router = Conductor.attachRouter(this, this.controllerContainer, savedInstanceState)
         if (!router.hasRootController()) {
-            router.setRoot(RouterTransaction.with(LoginScreenController()))
+            router.setRoot(RouterTransaction.with(LoginScreenViewController()))
         }
     }
 

@@ -32,8 +32,12 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
+    //view base conductor
     implementation 'com.bluelinelabs:conductor:2.1.4'
     implementation 'com.bluelinelabs:conductor-support:2.1.4'
+    implementation 'com.bluelinelabs:conductor-archlifecycle:0.1.1'
+
+    //design
     implementation 'net.soulwolf.widget:ratiolayout:2.1.0'
     implementation 'com.github.vivchar:RendererRecyclerViewAdapter:2.5.1'
 
@@ -47,4 +51,11 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxkotlin:2.1.0'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
     implementation 'io.reactivex.rxjava2:rxjava:2.1.6'
+
+    //Squareup
+    implementation "com.squareup.retrofit2:retrofit:2.3.0"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:2.3.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.3.0"
+    implementation 'com.squareup.okhttp3:okhttp:3.9.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
 }

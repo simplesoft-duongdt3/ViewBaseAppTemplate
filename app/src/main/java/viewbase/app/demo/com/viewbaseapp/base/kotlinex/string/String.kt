@@ -29,8 +29,12 @@ fun String.toTimeMilliSecond(format: String): Long = this.toDate(format).time
 
 fun String.removeAccentAndSpace(): String = AccentRemover.removeAccentAndSpace(this)
 
-fun String?.getValueOrDefaultIsEmpty(): String {
-    return this ?: ""
+fun String?.valueOrDefault(default : String): String {
+    return this ?: default
+}
+
+fun String?.valueOrEmpty(): String {
+    return this.valueOrDefault("")
 }
 
 fun String.toDate(format: String): Date = SimpleDateFormat(format, Locale.US).parse(this)

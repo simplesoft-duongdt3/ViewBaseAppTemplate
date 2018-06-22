@@ -97,6 +97,10 @@ class RecyclerViewController(private val recyclerView: RecyclerView, private val
         viewAdapter.notifyDataSetChanged()
     }
 
+    fun setPadding(padding: Int) {
+        recyclerView.setPadding(padding, padding, padding, padding)
+    }
+
     class RenderConfig(val layoutManager: RecyclerView.LayoutManager, val itemAnimator: RecyclerView.ItemAnimator? = null, val viewHolderSizer: ViewSizer? = null, val itemDecoration: RecyclerView.ItemDecoration? = null, val loadMoreConfig: LoadMoreConfig? = null)
 
     interface RenderConfigFactory {
@@ -122,5 +126,7 @@ class RecyclerViewController(private val recyclerView: RecyclerView, private val
         }
     }
 
-    class LoadMoreConfig(val loadMoreEvent: () -> Unit, val viewRenderer: LoadMoreViewBinder)
+    class LoadMoreConfig(val loadMoreEvent: () -> Unit, val viewRenderer: LoadMoreViewBinder){
+
+}
 }
