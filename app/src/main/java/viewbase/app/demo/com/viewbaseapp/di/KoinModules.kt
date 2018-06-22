@@ -5,6 +5,7 @@ import org.koin.dsl.module.applicationContext
 import viewbase.app.demo.com.viewbaseapp.App
 import viewbase.app.demo.com.viewbaseapp.base.executor.AndroidUseCaseExecution
 import viewbase.app.demo.com.viewbaseapp.base.resource.AndroidResourceManager
+import viewbase.app.demo.com.viewbaseapp.base.resource.ResourceManager
 import viewbase.app.demo.com.viewbaseapp.base.util.DoubleTouchPrevent
 import viewbase.app.demo.com.viewbaseapp.domain.usecase.LoginUseCase
 import viewbase.app.demo.com.viewbaseapp.domain.usecase.base.UseCaseExecution
@@ -18,7 +19,7 @@ val appModule: Module = applicationContext {
     }
 
     bean {
-        AndroidResourceManager(App.appContext)
+        AndroidResourceManager(App.appContext) as ResourceManager
     }
 
     factory {
