@@ -8,6 +8,9 @@ Kiến trúc tổng quan
 -----------------
 ![https://github.com/simplesoft-duongdt3/ViewBaseAppTemplate/tree/mvp](https://github.com/simplesoft-duongdt3/ViewBaseAppTemplate/blob/master/clean_architecture_layers.png)
 
+MVP (Model View Presenter)
+-----------------
+![https://github.com/simplesoft-duongdt3/ViewBaseAppTemplate/tree/mvp](https://github.com/simplesoft-duongdt3/ViewBaseAppTemplate/blob/master/mvp.png)
 
 Một số lưu ý khi sử dụng MVP
 -----------------
