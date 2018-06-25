@@ -22,10 +22,11 @@ Một số lưu ý khi sử dụng MVP
 ### Conductor
 
 Conductor là framework nhỏ, nhẹ, đầy đủ chức năng để xây dụng ứng dụng Android dạng View-base.
-[Link tham khảo](https://github.com/bluelinelabs/conductor/tree/master)
+
+[Link tham khảo Conductor](https://github.com/bluelinelabs/conductor/tree/master)
 
 
 ### KOIN
 KOIN là một framework cực kỳ nhỏ gọn cho mục đích dependency injection dành riêng cho Kotlin, chỉ sử dụng functional của Kotlin, không sử dụng proxy, code generation, reflection.
 
-[Link tham khảo](https://insert-koin.io)
+[Link tham khảo KOIN](https://insert-koin.io)
