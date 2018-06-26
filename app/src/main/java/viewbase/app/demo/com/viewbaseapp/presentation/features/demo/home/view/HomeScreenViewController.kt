@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.screen_feature_home.view.*
 import viewbase.app.demo.com.viewbaseapp.R
 import viewbase.app.demo.com.viewbaseapp.base.extra.BundleExtraObject
 import viewbase.app.demo.com.viewbaseapp.base.extra.BundleOptionsCompanion
-import viewbase.app.demo.com.viewbaseapp.base.viewbase.ViewController
+import viewbase.app.demo.com.viewbaseapp.base.viewbase.viewcontroller.ViewController
 import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.detail.view.DetailScreenViewController
 import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.login.model.LoginResultViewModel
 import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.pager.view.PagerScreenViewController

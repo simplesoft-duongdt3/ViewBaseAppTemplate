@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import com.bluelinelabs.conductor.RouterTransaction
 import kotlinx.android.synthetic.main.screen_feature_detail.view.*
 import viewbase.app.demo.com.viewbaseapp.R
-import viewbase.app.demo.com.viewbaseapp.base.viewbase.ViewController
+import viewbase.app.demo.com.viewbaseapp.base.viewbase.viewcontroller.ViewController
 
 
 class DetailScreenViewController(bundle: Bundle?) : ViewController(bundle) {

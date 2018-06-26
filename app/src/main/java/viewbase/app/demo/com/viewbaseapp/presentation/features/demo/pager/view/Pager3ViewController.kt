@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import viewbase.app.demo.com.viewbaseapp.R
-import viewbase.app.demo.com.viewbaseapp.base.viewbase.ViewController
+import viewbase.app.demo.com.viewbaseapp.base.viewbase.viewcontroller.ViewController
 
 
 class Pager3ViewController(bundle: Bundle?) : ViewController(bundle) {

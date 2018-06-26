@@ -9,7 +9,7 @@ import com.bluelinelabs.conductor.RouterTransaction
 import com.bluelinelabs.conductor.support.RouterPagerAdapter
 import kotlinx.android.synthetic.main.screen_feature_pager.view.*
 import viewbase.app.demo.com.viewbaseapp.R
-import viewbase.app.demo.com.viewbaseapp.base.viewbase.ViewController
+import viewbase.app.demo.com.viewbaseapp.base.viewbase.viewcontroller.ViewController
 
 
 class PagerScreenViewController(bundle: Bundle?) : ViewController(bundle) {

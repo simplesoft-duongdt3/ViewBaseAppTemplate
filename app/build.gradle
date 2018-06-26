@@ -68,4 +68,7 @@ dependencies {
 
     // Koin DI for Kotlin
     implementation 'org.koin:koin-android:0.9.3'
+
+    //logger
+    implementation 'com.jakewharton.timber:timber:4.7.0'
 }

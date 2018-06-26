@@ -10,7 +10,7 @@ import org.koin.standalone.inject
 import viewbase.app.demo.com.viewbaseapp.R
 import viewbase.app.demo.com.viewbaseapp.base.kotlinex.view.gone
 import viewbase.app.demo.com.viewbaseapp.base.kotlinex.view.visible
-import viewbase.app.demo.com.viewbaseapp.base.viewbase.ViewController
+import viewbase.app.demo.com.viewbaseapp.base.viewbase.viewcontroller.ViewController
 import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.home.view.HomeScreenViewController
 import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.login.LoginContract
 import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.login.model.LoginResultViewModel
@@ -59,7 +59,7 @@ class LoginScreenViewController(bundle: Bundle?) : ViewController(bundle), Login
     override fun goToHomeScreen(loginResultViewModel: LoginResultViewModel) {
         val bundle = HomeScreenViewController.BundleOptions.create(loginResultViewModel)
         router.pushController(RouterTransaction.with(HomeScreenViewController(bundle)))
-        router.popController(this)
+        //router.popController(this)
 
         /*router.pushController(RouterTransaction.with(DetailScreenController())
                 .popChangeHandler(HorizontalChangeHandler())

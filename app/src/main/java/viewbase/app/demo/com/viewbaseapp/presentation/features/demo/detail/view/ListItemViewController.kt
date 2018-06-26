@@ -12,7 +12,7 @@ import viewbase.app.demo.com.viewbaseapp.base.listview.model.ViewHolderRenderer
 import viewbase.app.demo.com.viewbaseapp.base.listview.view.GridRenderConfigFactory
 import viewbase.app.demo.com.viewbaseapp.base.listview.view.RecyclerViewController
 import viewbase.app.demo.com.viewbaseapp.base.listview.view.SpaceItemDecoration
-import viewbase.app.demo.com.viewbaseapp.base.viewbase.ViewController
+import viewbase.app.demo.com.viewbaseapp.base.viewbase.viewcontroller.ViewController
 
 class ListItemViewController(bundle: Bundle?) : ViewController(bundle) {
     constructor() : this(null)
