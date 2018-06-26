@@ -5,6 +5,7 @@ import viewbase.app.demo.com.viewbaseapp.base.exception.AppException
 import viewbase.app.demo.com.viewbaseapp.domain.usecase.base.UseCase
 import viewbase.app.demo.com.viewbaseapp.domain.usecase.base.UseCaseExecution
 import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.login.LoginResourceProvider
+import java.util.concurrent.TimeUnit
 
 class LoginUseCase(useCaseExecution: UseCaseExecution, private val loginResourceProvider: LoginResourceProvider) : UseCase<LoginUseCase.Input, LoginUseCase.Output>(useCaseExecution) {
     override fun buildUseCaseObservable(input: Input): Single<Output> {
@@ -14,7 +15,7 @@ class LoginUseCase(useCaseExecution: UseCaseExecution, private val loginResource
             } else {
                 e.onError(AppException(loginResourceProvider.getEmailPasswordWrongErrorMsg()))
             }
-        }
+        }.delay(2, TimeUnit.SECONDS)
     }
 
     class Input(val email: String, val pass: String)

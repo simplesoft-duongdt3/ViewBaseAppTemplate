@@ -8,8 +8,7 @@ import com.bluelinelabs.conductor.RouterTransaction
 import kotlinx.android.synthetic.main.screen_login.view.*
 import org.koin.standalone.inject
 import viewbase.app.demo.com.viewbaseapp.R
-import viewbase.app.demo.com.viewbaseapp.base.kotlinex.view.gone
-import viewbase.app.demo.com.viewbaseapp.base.kotlinex.view.visible
+import viewbase.app.demo.com.viewbaseapp.base.viewbase.screenchangehandler.VerticalChangeHandler
 import viewbase.app.demo.com.viewbaseapp.base.viewbase.viewcontroller.ViewController
 import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.home.view.HomeScreenViewController
 import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.login.LoginContract
@@ -22,9 +21,11 @@ class LoginScreenViewController(bundle: Bundle?) : ViewController(bundle), Login
     private val presenter: LoginContract.Presenter by inject()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup): View {
-        val view = inflater.inflate(R.layout.screen_login, container, false)
+        return inflater.inflate(R.layout.screen_login, container, false)
+    }
+
+    override fun initPostCreateView(view: View) {
         initView(view)
-        return view
     }
 
     private fun initView(view: View) {
@@ -49,16 +50,19 @@ class LoginScreenViewController(bundle: Bundle?) : ViewController(bundle), Login
     }
 
     override fun showLoading() {
-        view?.vgLoading?.visible()
+        view?.vgLoading?.show()
     }
 
     override fun hideLoading() {
-        view?.vgLoading?.gone()
+        view?.vgLoading?.hide()
     }
 
     override fun goToHomeScreen(loginResultViewModel: LoginResultViewModel) {
         val bundle = HomeScreenViewController.BundleOptions.create(loginResultViewModel)
-        router.pushController(RouterTransaction.with(HomeScreenViewController(bundle)))
+        router.pushController(RouterTransaction.with(HomeScreenViewController(bundle))
+                .popChangeHandler(VerticalChangeHandler())
+                .pushChangeHandler(VerticalChangeHandler())
+        )
         //router.popController(this)
 
         /*router.pushController(RouterTransaction.with(DetailScreenController())

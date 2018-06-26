@@ -7,8 +7,11 @@ import viewbase.app.demo.com.viewbaseapp.base.executor.AndroidUseCaseExecution
 import viewbase.app.demo.com.viewbaseapp.base.resource.AndroidResourceManager
 import viewbase.app.demo.com.viewbaseapp.base.resource.ResourceManager
 import viewbase.app.demo.com.viewbaseapp.base.util.DoubleTouchPrevent
+import viewbase.app.demo.com.viewbaseapp.domain.usecase.GetUsersUseCase
 import viewbase.app.demo.com.viewbaseapp.domain.usecase.LoginUseCase
 import viewbase.app.demo.com.viewbaseapp.domain.usecase.base.UseCaseExecution
+import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.detail.DetailContract
+import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.detail.presenter.ListUserPresenter
 import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.login.LoginContract
 import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.login.LoginResourceProvider
 import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.login.presenter.LoginPresenter
@@ -38,5 +41,14 @@ val loginModule: Module = applicationContext {
 
     factory {
         LoginPresenter(get(), get()) as LoginContract.Presenter
+    }
+}
+
+val detailModule: Module = applicationContext {
+    factory {
+        GetUsersUseCase(get())
+    }
+    factory {
+        ListUserPresenter(get()) as DetailContract.Presenter
     }
 }

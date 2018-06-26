@@ -11,18 +11,19 @@ import viewbase.app.demo.com.viewbaseapp.base.viewbase.viewcontroller.ViewContro
 
 
 class DetailScreenViewController(bundle: Bundle?) : ViewController(bundle) {
-
     constructor() : this(null)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup): View {
-        val view = inflater.inflate(R.layout.screen_feature_detail, container, false)
+        return inflater.inflate(R.layout.screen_feature_detail, container, false)
+    }
+
+    override fun initPostCreateView(view: View) {
         initView(view)
-        return view
     }
 
     private fun initView(view: View) {
         getChildRouter(view.vgHeader).setRoot(RouterTransaction.with(HeaderViewController()))
-        getChildRouter(view.vgListItem).setRoot(RouterTransaction.with(ListItemViewController()))
+        getChildRouter(view.vgListItem).setRoot(RouterTransaction.with(ListUserViewController()))
     }
 
     override fun onDestroyView(view: View) {

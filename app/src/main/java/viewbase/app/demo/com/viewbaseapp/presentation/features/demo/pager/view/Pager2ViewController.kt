@@ -13,4 +13,8 @@ class Pager2ViewController(bundle: Bundle?) : ViewController(bundle) {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup): View {
         return inflater.inflate(R.layout.header_home, container, false)
     }
+
+    override fun initPostCreateView(view: View) {
+
+    }
 }

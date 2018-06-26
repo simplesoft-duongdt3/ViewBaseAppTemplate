@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatDelegate
 import org.koin.android.ext.android.startKoin
 import timber.log.Timber
 import viewbase.app.demo.com.viewbaseapp.di.appModule
+import viewbase.app.demo.com.viewbaseapp.di.detailModule
 import viewbase.app.demo.com.viewbaseapp.di.loginModule
 
 class App : MultiDexApplication() {
@@ -23,7 +24,7 @@ class App : MultiDexApplication() {
     }
 
     private fun initDI() {
-        startKoin(this, listOf(appModule, loginModule))
+        startKoin(this, listOf(appModule, loginModule, detailModule))
     }
 
     companion object {
