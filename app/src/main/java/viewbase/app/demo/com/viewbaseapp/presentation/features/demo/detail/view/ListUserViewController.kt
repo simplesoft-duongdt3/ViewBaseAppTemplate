@@ -18,7 +18,6 @@ import viewbase.app.demo.com.viewbaseapp.base.listview.view.SpaceItemDecoration
 import viewbase.app.demo.com.viewbaseapp.base.viewbase.viewcontroller.ViewController
 import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.detail.DetailContract
 import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.detail.model.UserViewHolderModel
-
 class ListUserViewController(bundle: Bundle?) : ViewController(bundle), DetailContract.View {
     constructor() : this(null)
 
@@ -78,3 +77,4 @@ class ListUserViewController(bundle: Bundle?) : ViewController(bundle), DetailCo
         view?.ivError?.gone()
     }
 }
+
