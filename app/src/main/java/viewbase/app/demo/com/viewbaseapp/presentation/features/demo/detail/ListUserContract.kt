@@ -6,7 +6,7 @@ import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.detail.model
 import viewbase.app.demo.com.viewbaseapp.presentation.mvp.PresenterMvp
 import viewbase.app.demo.com.viewbaseapp.presentation.mvp.ViewMvp
 
-class DetailContract {
+class ListUserContract {
     interface View : ViewMvp, ViewSupportLoading, ViewSupportError {
         fun renderItems(userViewHolderModels: List<UserViewHolderModel>)
     }

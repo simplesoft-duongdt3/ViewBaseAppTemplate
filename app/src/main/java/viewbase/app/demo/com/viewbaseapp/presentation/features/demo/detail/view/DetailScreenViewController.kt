@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import com.bluelinelabs.conductor.RouterTransaction
 import kotlinx.android.synthetic.main.screen_feature_detail.view.*
 import viewbase.app.demo.com.viewbaseapp.R
+import viewbase.app.demo.com.viewbaseapp.base.eventbus.KBus
 import viewbase.app.demo.com.viewbaseapp.base.viewbase.viewcontroller.ViewController
 
 
@@ -19,6 +20,9 @@ class DetailScreenViewController(bundle: Bundle?) : ViewController(bundle) {
 
     override fun initPostCreateView(view: View) {
         initView(view)
+        KBus.subscribe<ListUserViewController.SelectUserBusEvent>(this, { selectedUser ->
+            sendSelectedEventToHeader(selectedUser)
+        })
     }
 
     private fun initView(view: View) {
@@ -26,7 +30,12 @@ class DetailScreenViewController(bundle: Bundle?) : ViewController(bundle) {
         getChildRouter(view.vgListItem).setRoot(RouterTransaction.with(ListUserViewController()))
     }
 
+    private fun sendSelectedEventToHeader(selectedUser: ListUserViewController.SelectUserBusEvent) {
+        KBus.post(HeaderViewController.SelectUserBusEvent(selectedUser.user.name))
+    }
+
     override fun onDestroyView(view: View) {
         super.onDestroyView(view)
+        KBus.unsubscribe(this)
     }
 }

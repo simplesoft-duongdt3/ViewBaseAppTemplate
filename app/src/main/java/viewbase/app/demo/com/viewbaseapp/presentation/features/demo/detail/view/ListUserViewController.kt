@@ -5,23 +5,26 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.github.vivchar.rendererrecyclerviewadapter.ViewModel
 import com.mikepenz.google_material_typeface_library.GoogleMaterial
 import com.mikepenz.iconics.IconicsDrawable
 import kotlinx.android.synthetic.main.list_item_home.view.*
 import org.koin.standalone.inject
 import viewbase.app.demo.com.viewbaseapp.R
+import viewbase.app.demo.com.viewbaseapp.base.eventbus.KBus
 import viewbase.app.demo.com.viewbaseapp.base.kotlinex.view.gone
 import viewbase.app.demo.com.viewbaseapp.base.kotlinex.view.visible
 import viewbase.app.demo.com.viewbaseapp.base.listview.view.GridRenderConfigFactory
+import viewbase.app.demo.com.viewbaseapp.base.listview.view.OnItemRvClickedListener
 import viewbase.app.demo.com.viewbaseapp.base.listview.view.RecyclerViewController
 import viewbase.app.demo.com.viewbaseapp.base.listview.view.SpaceItemDecoration
 import viewbase.app.demo.com.viewbaseapp.base.viewbase.viewcontroller.ViewController
-import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.detail.DetailContract
+import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.detail.ListUserContract
 import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.detail.model.UserViewHolderModel
-class ListUserViewController(bundle: Bundle?) : ViewController(bundle), DetailContract.View {
+class ListUserViewController(bundle: Bundle?) : ViewController(bundle), ListUserContract.View {
     constructor() : this(null)
 
-    private val presenter: DetailContract.Presenter by inject()
+    private val presenter: ListUserContract.Presenter by inject()
 
     private lateinit var recyclerViewController: RecyclerViewController
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup): View {
@@ -49,6 +52,17 @@ class ListUserViewController(bundle: Bundle?) : ViewController(bundle), DetailCo
         recyclerViewController = RecyclerViewController(view.rvItems, renderConfig)
         recyclerViewController.setPadding(4)
         recyclerViewController.addViewRenderer(UserViewHolderRenderer())
+        recyclerViewController.setOnItemRvClickedListener(object : OnItemRvClickedListener<ViewModel> {
+            override fun onItemClicked(view: View, position: Int, dataItem: ViewModel) {
+                if (dataItem is UserViewHolderModel) {
+                    sendSelectedEventToOutside(dataItem)
+                }
+            }
+        })
+    }
+
+    private fun sendSelectedEventToOutside(userViewHolderModel: UserViewHolderModel) {
+        KBus.post(SelectUserBusEvent(userViewHolderModel))
     }
 
     override fun onDestroyView(view: View) {
@@ -76,5 +90,7 @@ class ListUserViewController(bundle: Bundle?) : ViewController(bundle), DetailCo
     override fun hideError() {
         view?.ivError?.gone()
     }
+
+    class SelectUserBusEvent(val user: UserViewHolderModel)
 }
 

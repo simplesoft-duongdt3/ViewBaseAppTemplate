@@ -8,6 +8,8 @@ import com.bluelinelabs.conductor.RouterTransaction
 import kotlinx.android.synthetic.main.screen_login.view.*
 import org.koin.standalone.inject
 import viewbase.app.demo.com.viewbaseapp.R
+import viewbase.app.demo.com.viewbaseapp.base.kotlinex.view.hideKeyboard
+import viewbase.app.demo.com.viewbaseapp.base.util.DoubleTouchPrevent
 import viewbase.app.demo.com.viewbaseapp.base.viewbase.screenchangehandler.VerticalChangeHandler
 import viewbase.app.demo.com.viewbaseapp.base.viewbase.viewcontroller.ViewController
 import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.home.view.HomeScreenViewController
@@ -17,6 +19,7 @@ import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.login.model.
 
 class LoginScreenViewController(bundle: Bundle?) : ViewController(bundle), LoginContract.View {
     constructor() : this(null)
+    private val doubleTouchPrevent: DoubleTouchPrevent by inject()
 
     private val presenter: LoginContract.Presenter by inject()
 
@@ -31,8 +34,11 @@ class LoginScreenViewController(bundle: Bundle?) : ViewController(bundle), Login
     private fun initView(view: View) {
         presenter.attachView(this)
         view.btLogin.setOnClickListener {
-            val loginViewModel = LoginViewModel(view.etEmail.text.toString(), view.etPass.text.toString())
-            presenter.requestLogin(loginViewModel)
+            view.hideKeyboard()
+            if (doubleTouchPrevent.check("LoginScreen_login_click")) {
+                val loginViewModel = LoginViewModel(view.etEmail.text.toString(), view.etPass.text.toString())
+                presenter.requestLogin(loginViewModel)
+            }
         }
     }
 

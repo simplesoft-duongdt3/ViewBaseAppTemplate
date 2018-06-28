@@ -19,7 +19,7 @@ import viewbase.app.demo.com.viewbaseapp.data.service.database.UserDataServiceIm
 import viewbase.app.demo.com.viewbaseapp.domain.usecase.GetUsersUseCase
 import viewbase.app.demo.com.viewbaseapp.domain.usecase.LoginUseCase
 import viewbase.app.demo.com.viewbaseapp.domain.usecase.base.UseCaseExecution
-import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.detail.DetailContract
+import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.detail.ListUserContract
 import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.detail.presenter.ListUserPresenter
 import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.login.LoginContract
 import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.login.LoginResourceProvider
@@ -99,6 +99,6 @@ val detailModule: Module = applicationContext {
         GetUsersUseCase(get(), get())
     }
     factory {
-        ListUserPresenter(get()) as DetailContract.Presenter
+        ListUserPresenter(get()) as ListUserContract.Presenter
     }
 }
