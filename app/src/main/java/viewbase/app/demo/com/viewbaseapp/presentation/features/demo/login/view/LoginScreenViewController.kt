@@ -1,12 +1,15 @@
 package viewbase.app.demo.com.viewbaseapp.presentation.features.demo.login.view
 
+import android.Manifest
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.bluelinelabs.conductor.RouterTransaction
+import com.tbruyelle.rxpermissions2.RxPermissions
 import kotlinx.android.synthetic.main.screen_login.view.*
 import org.koin.standalone.inject
+import timber.log.Timber
 import viewbase.app.demo.com.viewbaseapp.R
 import viewbase.app.demo.com.viewbaseapp.base.kotlinex.view.hideKeyboard
 import viewbase.app.demo.com.viewbaseapp.base.util.DoubleTouchPrevent
@@ -17,8 +20,10 @@ import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.login.LoginC
 import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.login.model.LoginResultViewModel
 import viewbase.app.demo.com.viewbaseapp.presentation.features.demo.login.model.LoginViewModel
 
+
 class LoginScreenViewController(bundle: Bundle?) : ViewController(bundle), LoginContract.View {
     constructor() : this(null)
+
     private val doubleTouchPrevent: DoubleTouchPrevent by inject()
 
     private val presenter: LoginContract.Presenter by inject()
@@ -36,10 +41,27 @@ class LoginScreenViewController(bundle: Bundle?) : ViewController(bundle), Login
         view.btLogin.setOnClickListener {
             view.hideKeyboard()
             if (doubleTouchPrevent.check("LoginScreen_login_click")) {
-                val loginViewModel = LoginViewModel(view.etEmail.text.toString(), view.etPass.text.toString())
-                presenter.requestLogin(loginViewModel)
+                val rxPermissions = RxPermissions(activity!!)
+                rxPermissions.requestEach(Manifest.permission.CAMERA)
+                        .subscribe { granted ->
+                            when {
+                                granted.granted -> {
+                                    Timber.d("granted camera")
+                                    requestLogin(view)
+                                }
+                                granted.shouldShowRequestPermissionRationale -> {
+                                    Timber.d("not granted camera shouldShowRequestPermissionRationale")
+                                }
+                                else -> Timber.d("not granted camera")
+                            }
+                        }
             }
         }
+    }
+
+    private fun requestLogin(view: View) {
+        val loginViewModel = LoginViewModel(view.etEmail.text.toString(), view.etPass.text.toString())
+        presenter.requestLogin(loginViewModel)
     }
 
     override fun onDestroyView(view: View) {

@@ -5,4 +5,5 @@
     <string name="ACTION_OK">OK</string>
     <string name="login_feature_error_msg_missing_login_info">Missing login info.</string>
     <string name="login_feature_error_msg_wrong_login_info">"Email or password is not exists."</string>
+    <string name="header_detail_title">{user_name} is selected.</string>
 </resources>

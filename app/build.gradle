@@ -93,4 +93,10 @@ dependencies {
     implementation "com.github.Raizlabs.DBFlow:dbflow-rx2:${dbflow_version}"
     // RXJava 2 Kotlin Extensions Support
     implementation "com.github.Raizlabs.DBFlow:dbflow-rx2-kotlinextensions:${dbflow_version}"
+
+    //string util
+    implementation 'com.joanzapata.utils:string-format:1.0.1'
+
+    //permission requester
+    implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
 }
