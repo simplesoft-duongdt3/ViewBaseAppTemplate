@@ -41,3 +41,4 @@ Retrofit là một type-safe HTTP client dành cho Android/Java, đặc biệt h
 
 #### Timber
 Timber là một lớp hỗ trợ ghi log nhỏ gọn, đồng thời có hỗ trợ Lint để báo warning khi dùng Log của Android.
+[Link tham khảo Timber](https://github.com/JakeWharton/timber)
