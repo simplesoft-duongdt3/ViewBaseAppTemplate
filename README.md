@@ -37,8 +37,10 @@ DBFlow là một ORM đơn giản nhưng hỗ trợ rất nhiều tính năng c�
 
 #### Retrofit
 Retrofit là một type-safe HTTP client dành cho Android/Java, đặc biệt hỗ trợ tạo API interface cực kỳ dễ dàng.
+
 [Link tham khảo Retrofit](https://github.com/square/retrofit)
 
 #### Timber
 Timber là một lớp hỗ trợ ghi log nhỏ gọn, đồng thời có hỗ trợ Lint để báo warning khi dùng Log của Android.
+
 [Link tham khảo Timber](https://github.com/JakeWharton/timber)
